@@ -10,9 +10,9 @@ tmp[1] = 'France!'
 ft_tuple = tuple(tmp)
 
 ft_set.remove("tutu!")
-ft_set.add('Paris!')
+ft_set.add("Paris!")
 
-
+ft_dict["Hello"] = "42Paris!"
 
 print(ft_list)
 print(ft_tuple)
