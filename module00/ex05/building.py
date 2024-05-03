@@ -1,11 +1,11 @@
 import sys
 
 
-def countChars(string):
+def countChars(string: str):
     """Count the number of characters in a string."""
+    charset = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~"
     uppercase = sum(1 for c in string if c.isupper())
     lowercase = sum(1 for c in string if c.islower())
-    charset = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~"
     punctuation = sum(1 for c in string if c in charset)
     spaces = sum(1 for c in string if c.isspace())
     digits = sum(1 for c in string if c.isdigit())
@@ -17,7 +17,8 @@ def countChars(string):
     print(f"{digits} digits")
 
 
-if __name__ == "__main__":
+def main():
+    """main function"""
     try:
         assert len(sys.argv) <= 2, "more than one argument is provided"
     except AssertionError as err:
@@ -25,7 +26,16 @@ if __name__ == "__main__":
         exit()
 
     if len(sys.argv) == 1:
-        text = input("What is the text to count?\n")
+        print("What is the text to count?")
+        while True:
+            try:
+                text = input()
+            except EOFError:
+                break
         countChars(text)
     else:
         countChars(sys.argv[1])
+
+
+if __name__ == "__main__":
+    main()
