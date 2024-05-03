@@ -1,5 +1,5 @@
-def ft_filter(function_to_apply, list_of_inputs: list):
-    return [x for x in list_of_inputs if function_to_apply(x)]
+def ft_filter(function, iterable):
+    return [x for x in iterable if function(x)]
 
 
 names = ["John", "Kenny", "Tom", "Bob", "Dilan"]

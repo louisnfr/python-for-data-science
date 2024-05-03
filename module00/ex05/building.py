@@ -26,6 +26,7 @@ def main():
         exit()
 
     if len(sys.argv) == 1:
+        text = ""
         print("What is the text to count?")
         while True:
             try:
