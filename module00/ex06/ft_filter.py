@@ -1,12 +1,13 @@
 def ft_filter(function, iterable):
-    return [x for x in iterable if function(x)]
+    """filter iterables based on a function that returns True or False."""
+    if function:
+        return (item for item in iterable if function(item))
+    else:
+        return (item for item in iterable if item)
 
 
-names = ["John", "Kenny", "Tom", "Bob", "Dilan"]
+filtered = filter(None, ["1", True, 12, 0, None, False])
 
-filtered_names = ft_filter(lambda name: len(name) == 3, names)
 
-print(filtered_names)
-
-for x in filtered_names:
+for x in filtered:
     print(x)
