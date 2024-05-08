@@ -1,7 +1,7 @@
 from sys import argv
 
 
-def encode_to_more(message: str) -> str:
+def encode_to_morse(message: str) -> str:
     """encode a message to morse code"""
     morse_dict = {
         "A": ".-",
@@ -42,17 +42,24 @@ def encode_to_more(message: str) -> str:
         "0": "-----",
         " ": "/",
     }
-    morse_text = ""
-    return morse_text.join([morse_dict[c] for c in message.upper()])
+    encoded = []
+    for c in message.upper():
+        if c not in morse_dict:
+            raise AssertionError(f"Bad argument: {c} is not a valid character")
+        encoded.append(morse_dict[c])
+    return " ".join(encoded)
 
 
 def main():
     """main function"""
-    if len(argv) == 1:
+    if len(argv) != 2:
         print("Usage: python sos.py <message>")
         return
 
-    print(encode_to_more(argv[1]))
+    try:
+        print(encode_to_morse(argv[1]))
+    except AssertionError as err:
+        print(err)
 
 
 if __name__ == "__main__":
