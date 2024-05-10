@@ -22,17 +22,11 @@ def main():
     try:
         assert len(sys.argv) <= 2, "more than one argument is provided"
     except AssertionError as err:
-        print(AssertionError.__name__ + ":", err)
+        print("AssertionError:", err)
         exit()
 
     if len(sys.argv) == 1:
-        text = ""
-        print("What is the text to count?")
-        while True:
-            try:
-                text = input()
-            except EOFError:
-                break
+        text = input("What is the text to count?\n")
         countChars(text)
     else:
         countChars(sys.argv[1])

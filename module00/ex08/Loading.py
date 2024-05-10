@@ -2,7 +2,7 @@ import os
 
 
 def ft_tqdm(lst: range) -> None:
-
+    """Print a progress bar"""
     size_of_terminal = os.get_terminal_size().columns - 40
 
     for i, item in enumerate(lst, 1):

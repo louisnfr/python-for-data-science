@@ -47,7 +47,7 @@ def encode_to_morse(message: str) -> str:
         if c not in morse_dict:
             raise AssertionError(f"Bad argument: {c} is not a valid character")
         encoded.append(morse_dict[c])
-    return " ".join(encoded)
+    print(" ".join(encoded))
 
 
 def main():
@@ -55,9 +55,8 @@ def main():
     if len(argv) != 2:
         print("Usage: python sos.py <message>")
         return
-
     try:
-        print(encode_to_morse(argv[1]))
+        encode_to_morse(argv[1])
     except AssertionError as err:
         print(err)
 
