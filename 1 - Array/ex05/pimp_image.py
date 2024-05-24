@@ -67,17 +67,17 @@ def ft_green(img: np.ndarray) -> np.ndarray:
         return np.ndarray([])
 
 
-def ft_gray(img: np.ndarray) -> np.ndarray:
-    """converts rgb to gray"""
+def ft_grey(img: np.ndarray) -> np.ndarray:
+    """converts rgb to grey"""
     try:
         copy = img.copy()
         redC = copy[:, :, 0] / 3
         greenC = copy[:, :, 1] / 3
         blueC = copy[:, :, 2] / 3
-        gray = redC + greenC + blueC
-        copy[:, :, 0] = gray
-        copy[:, :, 1] = gray
-        copy[:, :, 2] = gray
+        grey = redC + greenC + blueC
+        copy[:, :, 0] = grey
+        copy[:, :, 1] = grey
+        copy[:, :, 2] = grey
         return copy
     except Exception as e:
         print("Error:", e)
@@ -94,7 +94,7 @@ def main():
         images.append(ImageObject(ft_red(original), "red"))
         images.append(ImageObject(ft_green(original), "green"))
         images.append(ImageObject(ft_blue(original), "blue"))
-        images.append(ImageObject(ft_gray(original), "gray"))
+        images.append(ImageObject(ft_grey(original), "grey"))
         display_images(images)
     except Exception as e:
         print("Error:", e)
