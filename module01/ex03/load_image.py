@@ -11,5 +11,5 @@ def ft_load(path: str) -> np.ndarray:
         print("The shape of the image is:", img.shape)
         return img
     except Exception as e:
-        print("Error: ", e)
+        print("Error:", e)
         return np.array([])
