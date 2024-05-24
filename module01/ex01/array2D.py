@@ -7,7 +7,7 @@ def slice_me(family: list, start: int, end: int) -> list:
         arr = np.array(family)
         print("my shape is:", arr.shape)
         print("my new shape is:", arr[start:end].shape)
-    except ValueError as e:
+    except Exception as e:
         print(e)
-        return None
-    return arr[start:end]
+        return []
+    return arr[start:end].tolist()
