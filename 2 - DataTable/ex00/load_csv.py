@@ -3,4 +3,8 @@ import pandas as pd
 
 def load(path: str) -> pd.DataFrame:
     """load csv"""
-    return pd.read_csv(path)
+    try:
+        return pd.read_csv(path)
+    except Exception as e:
+        print("Error:", e)
+        return pd.DataFrame(None)
