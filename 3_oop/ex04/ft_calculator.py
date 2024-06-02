@@ -1,16 +1,26 @@
 class calculator:
-    def __init__(self, vector: list[float]):
-        """init"""
-        self.vector = vector
+    """A class to perform vector operations."""
 
-    # decorator
+    @staticmethod
     def dotproduct(v1: list[float], v2: list[float]) -> None:
-        pass
+        """multiply two vectors"""
+        result = 0
+        for i, _ in enumerate(v1):
+            result += v1[i] * v2[i]
+        print(f"Dot product is: {result}")
 
-    # decorator
+    @staticmethod
     def add_vec(v1: list[float], v2: list[float]) -> None:
-        pass
+        """add two vectors"""
+        result: list[float] = []
+        for i, _ in enumerate(v1):
+            result.append(float(v1[i] + v2[i]))
+        print(f"Add vector is: {result}")
 
-    # decorator
+    @staticmethod
     def sous_vec(v1: list[float], v2: list[float]) -> None:
-        pass
+        """subtract two vectors"""
+        result: list[float] = []
+        for i, _ in enumerate(v1):
+            result.append(float(v1[i] - v2[i]))
+        print(f"Sous vector is: {result}")
