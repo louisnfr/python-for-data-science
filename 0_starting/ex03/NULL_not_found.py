@@ -1,4 +1,7 @@
-def NULL_not_found(object: any) -> int:
+from typing import Any
+
+
+def NULL_not_found(object: Any) -> int:
     objType = type(object)
     if object is None:
         print("Nothing: None", objType)
@@ -8,7 +11,7 @@ def NULL_not_found(object: any) -> int:
         print("Zero: 0", objType)
     elif isinstance(object, str) and object == "":
         print("Empty:", objType)
-    elif isinstance(object, bool) and object == False:
+    elif isinstance(object, bool) and not object:
         print("Fake: False", objType)
     else:
         print("Type not found")

@@ -1,3 +1,3 @@
-def add_one(number):
-    """add one"""
+def add_one(number: int) -> int:
+    """increments parameter"""
     return number + 1

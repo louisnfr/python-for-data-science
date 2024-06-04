@@ -21,7 +21,6 @@ def filterstring() -> None:
     """filter string"""
     sentence = argv[1].split()
     print(list(ft_filter(lambda word: len(word) > int(argv[2]), sentence)))
-    # print([word for word in sentence if len(word) > int(argv[2])])
 
 
 if __name__ == "__main__":
