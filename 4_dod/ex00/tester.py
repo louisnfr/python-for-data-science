@@ -1,8 +1,8 @@
 from statistics import quartile  # type: ignore
 
-quartile([1, 3, 4, 5])
+# quartile([1, 3, 4, 5])
 print()
-quartile([1, 11, 1, 360])
+quartile([1, 11, 42, 64, 360, 6])
 
 # print(quartile([1, 2, 3]))
 # print(quartile([9, 10, 12, 13, 13, 13, 15, 15, 16, 16, 18, 22, 23, 24, 24, 25]))

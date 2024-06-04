@@ -19,11 +19,11 @@ def quartile(args: list[int]):
     sort = sorted(args)
     middle = len(sort) // 2
 
-    q1 = median(sort[:middle])
-    q3 = median(sort[-middle:])
-    print(f"Q1 {q1}\nQ3 {q3}")
-    return [q1, q3]
-    print(f"q1: {q1}\nq3: {q3}")
+    rank25 = 0.75 * len(sort) + 1
+    print(rank25)
+    # q3 = median(sort[-middle:])
+    print(sort[rank25])
+    # return [q1, q3]
 
 
 def ft_statistics(*args: int, **kwargs: str) -> None:
