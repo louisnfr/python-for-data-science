@@ -1,7 +1,7 @@
-def median(args: list[int]) -> float:
+def median(data: list[int]) -> float:
     """returns median of list"""
-    print(f"median of {args}")
-    sort = sorted(args)
+    print(f"median of {data}")
+    sort = sorted(data)
     middle = len(sort) // 2
     if len(sort) % 2 == 0:
         return mean([sort[middle], sort[middle - 1]])
@@ -9,21 +9,26 @@ def median(args: list[int]) -> float:
         return sort[middle]
 
 
-def mean(args: list[int]) -> float:
+def mean(data: list[int]) -> float:
     """returns mean of list"""
-    return sum(args) / len(args)
+    return sum(data) / len(data)
 
 
-def quartile(args: list[int]):
-    """returns q1 and q3 of list"""
-    sort = sorted(args)
-    middle = len(sort) // 2
+def percentile(data: list[int], percentile: int) -> float:
+    """returns percentile value"""
+    data = sorted(data)
 
-    rank25 = 0.75 * len(sort) + 1
-    print(rank25)
-    # q3 = median(sort[-middle:])
-    print(sort[rank25])
-    # return [q1, q3]
+    index = (len(data) - 1) * percentile / 100
+
+    lower_index = int(index)
+    upper_index = lower_index + 1
+
+    lower_value = data[lower_index]
+    upper_value = data[upper_index]
+    fraction = index - lower_index
+
+    ret = lower_value + (upper_value - lower_value) * fraction
+    return ret
 
 
 def ft_statistics(*args: int, **kwargs: str) -> None:

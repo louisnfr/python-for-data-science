@@ -1,8 +1,11 @@
-from statistics import quartile  # type: ignore
+from statistics import percentile  # type: ignore
 
-# quartile([1, 3, 4, 5])
-print()
-quartile([1, 11, 42, 64, 360, 6])
+import numpy as np
+
+arr = [1, 42, 360, 11, 64]
+# arr = [2, 2, 3, 4, 5, 5, 5, 7, 8, 8, 9, 9, 10, 11, 11, 12]
+print(np.percentile(arr, 75))
+print(percentile(arr, 75))
 
 # print(quartile([1, 2, 3]))
 # print(quartile([9, 10, 12, 13, 13, 13, 15, 15, 16, 16, 18, 22, 23, 24, 24, 25]))
