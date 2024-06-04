@@ -1,3 +1,8 @@
+def mean(data: list[int]) -> float:
+    """returns mean of list"""
+    return sum(data) / len(data)
+
+
 def median(data: list[int]) -> float:
     """returns median of list"""
     print(f"median of {data}")
@@ -7,11 +12,6 @@ def median(data: list[int]) -> float:
         return mean([sort[middle], sort[middle - 1]])
     else:
         return sort[middle]
-
-
-def mean(data: list[int]) -> float:
-    """returns mean of list"""
-    return sum(data) / len(data)
 
 
 def percentile(data: list[int], percentile: int) -> float:
