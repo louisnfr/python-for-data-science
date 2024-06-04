@@ -2,7 +2,7 @@ def give_bmi(
     height: list[int | float], weight: list[int | float]
 ) -> list[int | float]:
     """gives the BMI of a person based on their height and weight."""
-    bmis = []
+    bmis: list[float] = []
     try:
         for i in range(len(height)):
             bmis.append(weight[i] / height[i] ** 2)

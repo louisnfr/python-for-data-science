@@ -1,4 +1,4 @@
-from statistics import ft_var  # type: ignore
+from statistics import ft_var
 
 import numpy as np
 

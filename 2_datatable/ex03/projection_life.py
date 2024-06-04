@@ -1,5 +1,8 @@
+from typing import Any
+
 import matplotlib.pyplot as plt
 from load_csv import load
+from pandas import Series
 
 
 def main():
@@ -9,8 +12,8 @@ def main():
     if income.empty or life_expectancy.empty:
         return
 
-    income_1900 = income["1900"]
-    life_expectancy_1900 = life_expectancy["1900"]
+    income_1900: Series[Any] = income["1900"]
+    life_expectancy_1900: Series[Any] = life_expectancy["1900"]
 
     plt.scatter(income_1900, life_expectancy_1900)
 

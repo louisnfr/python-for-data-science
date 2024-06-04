@@ -1,8 +1,10 @@
+from typing import Any
+
 import numpy as np
 from PIL import Image
 
 
-def ft_load(path: str) -> np.ndarray:
+def ft_load(path: str) -> np.ndarray[Any, np.dtype[Any]]:
     """loads an image"""
     try:
         img = Image.open(path)

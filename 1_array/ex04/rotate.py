@@ -1,9 +1,11 @@
+from typing import Any
+
 import matplotlib.pyplot as plt
 import numpy as np
 from load_image import ft_load
 
 
-def display_image(img: np.ndarray) -> None:
+def display_image(img: np.ndarray[Any, np.dtype[Any]]) -> None:
     """displays an image"""
     try:
         plt.imshow(img, cmap="gray")
@@ -12,7 +14,9 @@ def display_image(img: np.ndarray) -> None:
         print("Error:", e)
 
 
-def rotate_image(img: np.ndarray) -> np.ndarray:
+def rotate_image(
+    img: np.ndarray[Any, np.dtype[Any]]
+) -> np.ndarray[Any, np.dtype[Any]]:
     """rotates an image"""
     try:
         tr = [[img[j][i] for j in range(len(img))] for i in range(len(img))]

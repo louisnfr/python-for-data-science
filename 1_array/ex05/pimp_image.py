@@ -1,10 +1,12 @@
+from typing import Any
+
 import matplotlib.pyplot as plt
 import numpy as np
 from load_image import ft_load
 
 
 class ImageObject:
-    def __init__(self, img: np.ndarray, title: str):
+    def __init__(self, img: np.ndarray[Any, np.dtype[Any]], title: str):
         self.img = img
         self.title = title
 
@@ -12,7 +14,7 @@ class ImageObject:
 def display_images(images: list[ImageObject]) -> None:
     """displays an image"""
     try:
-        f, axs = plt.subplots(1, len(images))
+        _, axs = plt.subplots(1, len(images))
         for i, image in enumerate(images):
             axs[i].imshow(image.img)
             axs[i].set_title(image.title)
@@ -22,7 +24,9 @@ def display_images(images: list[ImageObject]) -> None:
         print("Error:", e)
 
 
-def ft_invert(img: np.ndarray) -> np.ndarray:
+def ft_invert(
+    img: np.ndarray[Any, np.dtype[Any]]
+) -> np.ndarray[Any, np.dtype[Any]]:
     """inverts color of an image"""
     try:
         return 255 - img
@@ -31,7 +35,9 @@ def ft_invert(img: np.ndarray) -> np.ndarray:
         return np.ndarray([])
 
 
-def ft_red(img: np.ndarray) -> np.ndarray:
+def ft_red(
+    img: np.ndarray[Any, np.dtype[Any]]
+) -> np.ndarray[Any, np.dtype[Any]]:
     """returns only red channel of an image"""
     try:
         red = img.copy()
@@ -43,7 +49,9 @@ def ft_red(img: np.ndarray) -> np.ndarray:
         return np.ndarray([])
 
 
-def ft_blue(img: np.ndarray) -> np.ndarray:
+def ft_blue(
+    img: np.ndarray[Any, np.dtype[Any]]
+) -> np.ndarray[Any, np.dtype[Any]]:
     """returns only blue channel of an image"""
     try:
         blue = img.copy()
@@ -55,7 +63,9 @@ def ft_blue(img: np.ndarray) -> np.ndarray:
         return np.ndarray([])
 
 
-def ft_green(img: np.ndarray) -> np.ndarray:
+def ft_green(
+    img: np.ndarray[Any, np.dtype[Any]]
+) -> np.ndarray[Any, np.dtype[Any]]:
     """returns only green channel of an image"""
     try:
         green = img.copy()
@@ -67,7 +77,9 @@ def ft_green(img: np.ndarray) -> np.ndarray:
         return np.ndarray([])
 
 
-def ft_grey(img: np.ndarray) -> np.ndarray:
+def ft_grey(
+    img: np.ndarray[Any, np.dtype[Any]]
+) -> np.ndarray[Any, np.dtype[Any]]:
     """converts rgb to grey"""
     try:
         copy = img.copy()
