@@ -1,4 +1,4 @@
-from statistics import standard_deviation  # type: ignore
+from statistics import ft_var  # type: ignore
 
 import numpy as np
 
@@ -6,8 +6,8 @@ import numpy as np
 arr = [82, 93, 98, 89, 88]
 # arr = [5, 75, 450, 18, 597, 27474, 48575]
 # arr = [2, 2, 3, 4, 5, 5, 5, 7, 8, 8, 9, 9, 10, 11, 11, 12]
-print(np.std(arr))
-print(standard_deviation(arr))
+print(np.var(arr))
+print(ft_var(arr))
 
 # print(quartile([1, 2, 3]))
 # print(quartile([9, 10, 12, 13, 13, 13, 15, 15, 16, 16, 18, 22, 23, 24, 24, 25]))

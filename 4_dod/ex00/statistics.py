@@ -1,20 +1,20 @@
-def mean(data: list[int]) -> float:
+def ft_mean(data: list[int]) -> float:
     """returns mean of list"""
     return sum(data) / len(data)
 
 
-def median(data: list[int]) -> float:
+def ft_median(data: list[int]) -> float:
     """returns median of list"""
     print(f"median of {data}")
     sort = sorted(data)
     middle = len(sort) // 2
     if len(sort) % 2 == 0:
-        return mean([sort[middle], sort[middle - 1]])
+        return ft_mean([sort[middle], sort[middle - 1]])
     else:
         return sort[middle]
 
 
-def percentile(data: list[int], percentile: int) -> float:
+def ft_percentile(data: list[int], percentile: int) -> float:
     """returns percentile value"""
     data = sorted(data)
 
@@ -31,10 +31,16 @@ def percentile(data: list[int], percentile: int) -> float:
     return ret
 
 
-def standard_deviation(data: list[int]) -> float:
-    m = mean(data)
+def ft_std(data: list[int]) -> float:
+    """returns standard deviation"""
+    m = ft_mean(data)
     s = sum([(x - m) ** 2 for x in data])
     return (s / len(data)) ** 0.5
+
+
+def ft_var(data: list[int]) -> float:
+    """returns variance"""
+    return 0
 
 
 def ft_statistics(*args: int, **kwargs: str) -> None:
