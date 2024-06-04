@@ -31,6 +31,12 @@ def percentile(data: list[int], percentile: int) -> float:
     return ret
 
 
+def standard_deviation(data: list[int]) -> float:
+    m = mean(data)
+    s = sum([(x - m) ** 2 for x in data])
+    return (s / len(data)) ** 0.5
+
+
 def ft_statistics(*args: int, **kwargs: str) -> None:
     """main function"""
     # array = list(args)
